@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Cab and Taxi Fare Optimization Systems</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 150px 50px;
+      background-image: url('images/q.jpg'); /* Use your graph image */
+      background-size: cover;
+      background-position: center;
+      color: #38481d;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    header h1 {
+      font-size: 50px;
+      margin: 0;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #1fa789;
+      padding: 15px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      background-color: #fff;
+      padding: 30px 0;
+    }
+    .content {
+      width: 80%;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .content h3 {
+      color: #1b8d74;
+      margin-top: 20px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
+    }
+    .project-info {
+      background-color: #e2f9f4;
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid #1fa789;
+      text-align: center;
+    }
+    .project-info h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #1fa789;
+    }
+    .project-info p {
+      font-size: 18px;
+      color: #555;
+    }
+    /* Styling for the C++ code box */
+    .code-box {
+      background-color: #2d2d2d;
+      color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-family: 'Courier New', Courier, monospace;
+      white-space: pre-wrap; 
+      word-wrap: break-word;
+      border: 2px solid #1fa789;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="project.html">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Optimized Electricity Distribution Systems</h1>
+  </header>
+
+  <!-- Project Information -->
+  <div class="project-info">
+    <h2>Project Details</h2>
+    <p><strong>Project Done By:</strong> AYUSH KABBUR</p>
+    <p><strong>Roll Number:</strong> 212</p>
+    <p><strong>USN:</strong> 01FE23BCI033</p>
+  </div>
+
+  <div class="content">
+    <h3>Project Overview:</h3>
+    <p>This project focuses on optimizing electricity distribution systems using algorithms like Prim’s Algorithm to design minimum spanning trees (MST) for reduced transportation costs in power distribution networks. By applying these concepts, we can create efficient systems for cab and taxi fare optimization as well, minimizing the overall fare for users based on different routes.</p>
+    <h3>Key Features:</h3>
+    <ul>
+      <li>Application of Prim's algorithm to reduce the total cost of electricity distribution.</li>
+      <li>Optimized routes for taxi fares using Minimum Spanning Trees (MST).</li>
+      <li>Efficient graph-based modeling of the city's transport network.</li>
+      <li>Real-time fare calculation for users based on their routes and locations.</li>
+    </ul>
+    <h3>Technologies Used:</h3>
+    <ul>
+      <li>C++ programming language for implementing the algorithm.</li>
+      <li>Graph theory and MST for optimizing transport routes.</li>
+      <li>Data structures like priority queues, vectors, and pairs for efficient implementation.</li>
+    </ul>
+  </div>
+
+  <!-- C++ Code -->
+  <div class="code-box">
+    <code>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;climits&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+// Pair to store edge (weight, node)
+typedef pair&lt;int, int&gt; Edge;
+
+// Prim's algorithm to find the Minimum Spanning Tree (MST)
+void primMST(vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; &graph, int nodes) {
+    // Initialize visited array
+    vector&lt;bool&gt; visited(nodes, false);
+
+    // Priority queue to select the minimum weight edge
+    priority_queue&lt;Edge, vector&lt;Edge&gt;, greater&lt;Edge&gt;&gt; pq;
+
+    // Start from node 0 (Sector 14)
+    pq.push({0, 0});
+    int totalCost = 0;
+
+    cout &lt;&lt; "Edges in the Minimum Spanning Tree:\n";
+
+    while (!pq.empty()) {
+        auto [weight, node] = pq.top();
+        pq.pop();
+
+        // If already visited, skip this node
+        if (visited[node]) continue;
+
+        // Mark the node as visited
+        visited[node] = true;
+        totalCost += weight;
+
+        // Print the edge if it's part of the MST
+        if (weight != 0)
+            cout &lt;&lt; "Node " &lt;&lt; node &lt;&lt; " connected with weight: " &lt;&lt; weight &lt;&lt; endl;
+
+        // Add all adjacent edges of the node to the priority queue
+        for (auto &neighbor : graph[node]) {
+            int nextNode = neighbor.first;
+            int edgeWeight = neighbor.second;
+
+            if (!visited[nextNode]) {
+                pq.push({edgeWeight, nextNode});
+            }
+        }
+    }
+
+    cout &lt;&lt; "Total cost of the Minimum Spanning Tree: " &lt;&lt; totalCost &lt;&lt; " km\n";
+}
+
+int main() {
+    // Define the graph based on the image
+    int nodes = 12; // Total zones: Sector 14, Sector 15, etc.
+    vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; graph(nodes);
+
+    // Add edges (node1, node2, weight)
+    graph[0].push_back({1, 5}); // Sector 14 to Sector 15
+    graph[0].push_back({3, 8}); // Sector 14 to Cyber City
+    graph[1].push_back({0, 5});
+    graph[1].push_back({2, 6}); // Sector 15 to Udyog Vihar
+    graph[1].push_back({3, 7}); // Sector 15 to Cyber City
+    graph[2].push_back({1, 6});
+    graph[2].push_back({5, 5}); // Udyog Vihar to Sector 29
+    graph[3].push_back({0, 8});
+    graph[3].push_back({1, 7});
+    graph[3].push_back({4, 4}); // Cyber City to Sector 56
+    graph[3].push_back({6, 7}); // Cyber City to Sector 62
+    graph[4].push_back({3, 4});
+    graph[4].push_back({5, 4}); // Sector 56 to Sector 29
+    graph[4].push_back({7, 9}); // Sector 56 to Sohna Road
+    graph[5].push_back({2, 5});
+    graph[5].push_back({4, 4});
+    graph[5].push_back({8, 8}); // Sector 29 to MG Road
+    graph[6].push_back({3, 7});
+    graph[6].push_back({7, 10}); // Sector 62 to Sohna Road
+    graph[6].push_back({9, 8}); // Sector 62 to Manesar
+    graph[7].push_back({4, 9});
+    graph[7].push_back({6, 10});
+    graph[7].push_back({10, 9}); // Sohna Road to Huda City Centre
+    graph[8].push_back({5, 8});
+    graph[8].push_back({10, 7}); // MG Road to Huda City Centre
+    graph[9].push_back({6, 8});
+    graph[9].push_back({10, 12}); // Manesar to Huda City Centre
+    graph[10].push_back({7, 9});
+    graph[10].push_back({8, 7});
+    graph[10].push_back({9, 12});
+
+    // Run Prim's algorithm
+    primMST(graph, nodes);
+
+    return 0;
+}
+    </code>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 City Cab and Taxi Fare Optimization Systems. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
