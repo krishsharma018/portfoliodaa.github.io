@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Sorting System for Companies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f09;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 150px 50px;
+      background-image: url('images/q.jpg'); /* Use your graph image */
+      background-size: cover;
+      background-position: center;
+      color: #38481d;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    header h1 {
+      font-size: 50px;
+      margin: 0;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #1fa789;
+      padding: 15px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      background-color: #fff;
+      padding: 30px 0;
+    }
+    .content {
+      width: 80%;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .content h3 {
+      color: #1b8d74;
+      margin-top: 20px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
+    }
+    .project-info {
+      background-color: #e2f9f4;
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid #1fa789;
+      text-align: center;
+    }
+    .project-info h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #1fa789;
+    }
+    .project-info p {
+      font-size: 18px;
+      color: #555;
+    }
+    .section-content {
+      margin: 40px auto;
+      width: 80%;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .section-content h3 {
+      color: #1fa789;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="project.html">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>SMART SORTING</h1>
+  </header>
+
+  <!-- Project Information -->
+  <div class="project-info">
+    <h2>Project Details</h2>
+    <p><strong>Project Done By:</strong> AMAN YALLIGAR</p>
+    <p><strong>Roll Number:</strong> 201</p>
+    <p><strong>USN:</strong> 01FE23BCI003</p>
+  </div>
+
+  <!-- Project Description -->
+  <section class="section-content">
+    <h3>Problem Statement: Sorting and Filtering Products</h3>
+    <p>The goal is to create an efficient system to sort and filter products for various business operations. The system will rank products based on various criteria, such as customer ratings, sales data, and profit margins.</p>
+
+    <h3>Objective</h3>
+    <p>To sort and filter products to determine:</p>
+    <ul>
+      <li>Top-rated products based on customer ratings.</li>
+      <li>Top-selling products based on sales data.</li>
+      <li>Top-margin products to optimize profits.</li>
+    </ul>
+
+    <h3>Implementation Overview</h3>
+    <h4>Input Data:</h4>
+    <p>A dataset containing product attributes such as name, rating, sales count, and margin will be used to perform sorting and filtering operations.</p>
+
+    <h4>Algorithms Used:</h4>
+    <p>We will use Merge Sort or Quick Sort to rank products. For retrieving only the top k items, we will utilize Min-Heap or Max-Heap.</p>
+
+    <h4>Output:</h4>
+    <p>The output will consist of lists of sorted products for each category.</p>
+  </section>
+
+  <!-- Learning Outcomes -->
+  <section class="section-content">
+    <h3>Learning Outcomes</h3>
+    <ul>
+      <li><strong>Sorting Algorithm Efficiency:</strong> Understand the time complexity differences between algorithms like Merge Sort (O(n log n)) and Quick Sort (average case O(n log n), worst case O(n^2)).</li>
+      <li><strong>Heap Data Structure:</strong> Learn how heaps can efficiently find the top k products (O(k log n)).</li>
+      <li><strong>Real-World Application:</strong> How algorithmic concepts can improve business intelligence by providing actionable insights.</li>
+    </ul>
+  </section>
+
+  <!-- Reflection -->
+  <section class="section-content">
+    <h3>Reflection for Your Problem</h3>
+    <p><strong>Concept Used:</strong> Sorting and filtering algorithms, primarily Merge Sort for stable sorting and Heap Sort for selecting top k elements.</p>
+    <p><strong>Challenge Addressed:</strong> Efficiently managing large datasets to identify the best-performing products in various categories, ensuring businesses can make informed decisions.</p>
+  </section>
+
+  <!-- Additional Problem Statements -->
+  <section class="section-content">
+    <h3>Additional Problem Statements</h3>
+    <ul>
+      <li><strong>Real-Time Recommendation System:</strong> Use graph algorithms (e.g., Dijkstra’s) to recommend complementary products based on customer purchase history.</li>
+      <li><strong>Dynamic Pricing Analysis:</strong> Use dynamic programming to calculate optimal pricing strategies for maximizing revenue across product categories.</li>
+    </ul>
+  </section>
+
+  <footer>
+    Copyrights G Division Team 7
+  </footer>
+
+</body>
+</html>
