@@ -6,6 +6,7 @@
   <title>City Cab and Taxi Fare Optimization Systems</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* General Styling */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -13,25 +14,29 @@
       background-color: #f4f4f4;
       color: #333;
     }
+
     header {
       text-align: center;
       padding: 150px 50px;
-      background-image: url('q.jpg'); /* Use your graph image */
+      background-image: url('q.jpg'); /* Background cover image */
       background-size: cover;
       background-position: center;
       color: #38481d;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
+
     header h1 {
       font-size: 50px;
       margin: 0;
       font-weight: bold;
     }
+
     nav {
       background-color: #1fa789;
       padding: 15px 0;
       text-align: center;
     }
+
     nav a {
       color: white;
       margin: 0 15px;
@@ -39,29 +44,36 @@
       font-size: 18px;
       font-weight: bold;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     section {
       background-color: #fff;
       padding: 30px 0;
     }
+
     .content {
       width: 80%;
       margin: 0 auto;
       line-height: 1.8;
     }
+
     .content h3 {
       color: #1b8d74;
       margin-top: 20px;
     }
+
     ul {
       list-style-type: none;
       padding: 0;
     }
+
     ul li {
       margin-bottom: 10px;
     }
+
     footer {
       background-color: #333;
       color: #fff;
@@ -69,6 +81,7 @@
       padding: 20px 0;
       margin-top: 30px;
     }
+
     .project-info {
       background-color: #e2f9f4;
       padding: 20px;
@@ -76,29 +89,34 @@
       border: 1px solid #1fa789;
       text-align: center;
     }
+
     .project-info h2 {
       margin: 0;
       font-size: 28px;
       color: #1fa789;
     }
+
     .project-info p {
       font-size: 18px;
       color: #555;
     }
-    /* Styling for the images */
+
+    /* Images side by side */
     .image-container {
       display: flex;
       justify-content: center;
       gap: 20px;
       margin-top: 20px;
     }
+
     .image-container img {
       max-width: 45%;
       border: 1px solid #ddd;
       border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    /* Styling for the C++ code box */
+
+    /* C++ code styling */
     .code-box {
       background-color: #2d2d2d;
       color: #fff;
@@ -123,11 +141,12 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- Header Section -->
   <header>
     <h1>Optimized Electricity Distribution Systems</h1>
   </header>
 
-  <!-- Images side by side -->
+  <!-- Images Section -->
   <div class="image-container">
     <img src="22.jpg" alt="City Network Image 22">
     <img src="33.jpg" alt="City Network Image 33">
@@ -141,6 +160,7 @@
     <p><strong>USN:</strong> 01FE23BCI033</p>
   </div>
 
+  <!-- Content Section -->
   <div class="content">
     <h3>Project Overview:</h3>
     <p>This project focuses on optimizing electricity distribution systems using algorithms like Prim’s Algorithm to design minimum spanning trees (MST) for reduced transportation costs in power distribution networks. By applying these concepts, we can create efficient systems for cab and taxi fare optimization as well, minimizing the overall fare for users based on different routes.</p>
@@ -159,13 +179,59 @@
     </ul>
   </div>
 
-  <!-- C++ Code -->
+  <!-- C++ Code Box -->
   <div class="code-box">
     <code>
-      // Your C++ code here (already included in the original content)
+      #include &lt;iostream&gt;
+      #include &lt;vector&gt;
+      #include &lt;climits&gt;
+      #include &lt;queue&gt;
+      using namespace std;
+
+      typedef pair&lt;int, int&gt; Edge;
+
+      void primMST(vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; &graph, int nodes) {
+          vector&lt;bool&gt; visited(nodes, false);
+          priority_queue&lt;Edge, vector&lt;Edge&gt;, greater&lt;Edge&gt;&gt; pq;
+
+          pq.push({0, 0});
+          int totalCost = 0;
+
+          cout &lt;&lt; "Edges in the Minimum Spanning Tree:\n";
+
+          while (!pq.empty()) {
+              auto [weight, node] = pq.top();
+              pq.pop();
+
+              if (visited[node]) continue;
+
+              visited[node] = true;
+              totalCost += weight;
+
+              if (weight != 0)
+                  cout &lt;&lt; "Node " &lt;&lt; node &lt;&lt; " connected with weight: " &lt;&lt; weight &lt;&lt; endl;
+
+              for (auto &neighbor : graph[node]) {
+                  int nextNode = neighbor.first;
+                  int edgeWeight = neighbor.second;
+
+                  if (!visited[nextNode]) {
+                      pq.push({edgeWeight, nextNode});
+                  }
+              }
+          }
+
+          cout &lt;&lt; "Total cost of the Minimum Spanning Tree: " &lt;&lt; totalCost &lt;&lt; " km\n";
+      }
+
+      int main() {
+          // Graph details...
+          return 0;
+      }
     </code>
   </div>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 City Cab and Taxi Fare Optimization Systems. All Rights Reserved.</p>
   </footer>
