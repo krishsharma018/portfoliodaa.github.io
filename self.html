@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Cab and Taxi Fare Optimization Systems</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 100px 50px;
+      background-image: url('images/q.jpg'); /* Use your graph image */
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+    header h1 {
+      font-size: 60px;
+      margin: 0;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #1fa789;
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .content-section {
+      padding: 20px;
+      margin: 20px auto;
+      background: #fff;
+      width: 90%;
+      max-width: 1200px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .content-section h2 {
+      color: #1b8d74;
+      margin-top: 0;
+    }
+    ul {
+      list-style-type: square;
+      margin-left: 20px;
+    }
+    .project-info {
+      background-color: #e2f9f4;
+      padding: 20px;
+      border: 2px solid #1fa789;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .project-info h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #1fa789;
+    }
+    .project-info p {
+      font-size: 18px;
+      color: #555;
+    }
+    .code-block {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: monospace;
+      overflow-x: auto;
+      line-height: 1.6;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="project.html">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>City Cab and Taxi Fare Optimization</h1>
+  </header>
+
+  <!-- Project Information -->
+  <div class="content-section project-info">
+    <h2>Project Details</h2>
+    <p><strong>Project Done By:</strong> Ayush Kabbur</p>
+    <p><strong>Roll Number:</strong> 212</p>
+    <p><strong>USN:</strong> 01FE23BCI033</p>
+  </div>
+
+  <!-- Tech Skills -->
+  <div class="content-section">
+    <h2>Tech Skills</h2>
+    <ul>
+      <li>Python</li>
+      <li>SQL (MySQL)</li>
+      <li>C/C++</li>
+    </ul>
+  </div>
+
+  <!-- Education Section -->
+  <div class="content-section">
+    <h2>Education</h2>
+    <p><strong>Bachelor in Computer Science and Engineering</strong><br>
+       KLE Technological University, 2027</p>
+  </div>
+
+  <!-- Project Section -->
+  <div class="content-section">
+    <h2>Projects</h2>
+    <p>As part of our course, we have used our knowledge of algorithms to create a smart, self-sufficient city, minimizing human intervention in day-to-day activities. By leveraging algorithms such as BFS, DFS, Prim’s, Dijkstra’s, and more, we've built a futuristic city.</p>
+    
+    <h3>Project 1: Self-Driving Car</h3>
+    <p>This project utilizes the Breadth First Search (BFS) algorithm to determine the shortest path for a self-driving car, ensuring it adheres to the speed limit of each street.</p>
+
+    <h4>Code:</h4>
+    <div class="code-block">
+      #include &lt;iostream&gt;<br>
+      #include &lt;vector&gt;<br>
+      #include &lt;queue&gt;<br>
+      #include &lt;map&gt;<br>
+      #include &lt;limits&gt;<br>
+      #include &lt;string&gt;<br>
+      #include &lt;algorithm&gt;<br><br>
+
+      using namespace std;<br><br>
+
+      #define RED "&lt;\033[31m&gt;"<br>
+      #define RESET "&lt;\033[0m&gt;"<br><br>
+
+      struct Street {<br>
+        string name;<br>
+        int distance_km;<br>
+        int speed_limit;<br>
+      };<br><br>
+
+      void bfs_with_speed_adjustment(...) { ... }<br><br>
+
+      int main() {<br>
+        map<int, vector<pair<int, int>>> graph = { ... };<br>
+        map<pair<int, int>, int> speedLimits = { ... };<br>
+        map<int, string> locationNames = { ... };<br><br>
+
+        cout << "Available Locations:\\n";<br>
+        cout << "==================\\n";<br>
+        for (const auto &entry : locationNames) {<br>
+          cout << entry.first << ". " << entry.second << "\\n";<br>
+        }<br>
+        cout << "==================\\n\\n";<br>
+
+        int start, destination, carSpeed;<br>
+        cout << "Enter starting location number: ";<br>
+        cin >> start;<br>
+        cout << "Enter destination location number: ";<br>
+        cin >> destination;<br>
+        cout << "Enter car's current speed (km/h): ";<br>
+        cin >> carSpeed;<br><br>
+
+        if (locationNames.find(start) == locationNames.end() ||<br>
+            locationNames.find(destination) == locationNames.end()) {<br>
+          cout << "Error: Invalid location selected! Exiting program." << endl;<br>
+          return 1;<br>
+        }<br>
+
+        auto firstStreetSpeedLimit = speedLimits[{start, graph[start][0].first}];<br>
+        if (carSpeed > firstStreetSpeedLimit) {<br>
+          cout << RED << "Initial speed exceeds starting street limit! Adjusting to " << firstStreetSpeedLimit << " km/h.\n" << RESET;<br>
+          carSpeed = firstStreetSpeedLimit;<br>
+        }<br><br>
+
+        bfs_with_speed_adjustment(start, destination, carSpeed, graph, speedLimits, locationNames);<br><br>
+
+        return 0;<br>
+      }<br>
+    </div>
+  </div>
+
+  <footer>
+    Copyright © G Division Team 7
+  </footer>
+
+</body>
+</html>
