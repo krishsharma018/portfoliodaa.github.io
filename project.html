@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAA Project Portfolio - Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f4;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 150px 50px;
+      background-image: url('images/MA.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #0e0d0d;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    header h1 {
+      font-size: 70px;
+      margin: 0;
+      font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    }
+    nav {
+      background-color: #1fa789;
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #ffd700;
+    }
+    section {
+      background-color: #eef2f3;
+      padding: 50px 0;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
+    }
+    .content {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .content h3 {
+      color: #1b8d74;
+      margin-bottom: 20px;
+    }
+    .project-list {
+      list-style: none;
+      padding: 0;
+    }
+    .project-list li {
+      background-color: #fff;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .project-list li:hover {
+      transform: translateY(-10px);
+    }
+    .details-button {
+      background-color: #1fa789;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      margin-top: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .details-button:hover {
+      background-color: #156f55;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="project.html">Projects</a>
+    <a href="#learning-outcomes">Learning Outcomes</a>
+    <a href="#sustainability">Sustainability Case Study</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>DAA Project Portfolio - Projects</h1>
+  </header>
+
+  <!-- Project Section -->
+  <section>
+    <div class="content">
+      <h2>Welcome to the Project Section</h2>
+      <p>Explore the following projects related to Data Structures and Algorithms (DAA). Click the buttons to get more details:</p>
+      <ul class="project-list">
+        <li>
+          <strong>City Cab Optimization System:</strong> A project to optimize the efficiency of city-wide cab services.
+          <button class="details-button" onclick="window.location.href='krish.html';">Details</button>
+        </li>
+        <li>
+          <strong>Sustainable Urbanization Case Study:</strong> Strategies for achieving sustainable urban growth and efficient resource management.
+          <button class="details-button" onclick="window.location.href='sustainability.html';">Details</button>
+        </li>
+        <li>
+          <strong>Enhancing The Agricultural Facts:</strong> Leveraging data to improve agricultural practices.
+          <ul>
+            <li>
+              <strong>Crop Yield Optimization:</strong> Identifying combinations of fields and crop varieties to maximize production.
+              <button class="details-button" onclick="window.location.href='agriculture.html';">Details</button>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Self-Driving Car:</strong> Using BFS algorithm for route optimization in self-driving cars.
+          <button class="details-button" onclick="window.location.href='self.html';">Details</button>
+        </li>
+        <li>
+          <strong>Smart Car Showroom System:</strong> A system that enhances the car-buying experience using real-time data and virtual tours.
+          <button class="details-button" onclick="window.location.href='showroom.html';">Details</button>
+        </li>
+        <li>
+          <strong>Smart Sorting System for Companies:</strong> Optimizing resource management and workflow processes in companies.
+          <button class="details-button" onclick="window.location.href='smart_sorting.html';">Details</button>
+        </li>
+        <li>
+          <strong>Electricity Distribution in Gurugram:</strong> Optimizing electricity distribution and reducing power losses.
+          <button class="details-button" onclick="window.location.href='electricity_distribution.html';">Details</button>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Copyrights G Division Team 7
+  </footer>
+
+</body>
+</html>
