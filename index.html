@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAA Project Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 200px 50px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/b.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      animation: fadeIn 2s;
+    }
+    header h1 {
+      font-size: 70px;
+      margin: 0;
+      font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #1fa789;
+      padding: 15px 0;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+    section {
+      padding: 30px 0;
+    }
+    #home {
+      background-color: #eef2f3;
+    }
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .team-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px;
+      transition: transform 0.3s;
+    }
+    .team-card:hover {
+      transform: translateY(-10px);
+    }
+    .team-card h3 {
+      margin: 0;
+      padding: 15px;
+      text-align: center;
+      background: #1fa789;
+      color: white;
+    }
+    .team-card p {
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+    }
+    .content {
+      width: 70%;
+      margin: 30px auto;
+      text-align: center;
+    }
+    .content h3 {
+      color: #1b8d74;
+      margin-bottom: 20px;
+    }
+    ol {
+      text-align: left;
+    }
+    footer {
+      background-color: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
+      position: relative;
+    }
+    footer a {
+      color: #1fa789;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="project.html">Project</a>
+    <a href="#learning-outcomes">Learning Outcomes</a>
+  </nav>
+
+  <header>
+    <h1>DAA Project Portfolio</h1>
+  </header>
+
+  <section id="home">
+    <h2 style="text-align:center; margin-top: 30px;">Team Details</h2>
+    <div class="team-container">
+      <div class="team-card">
+        <h3>Krish Sharma</h3>
+        <p>Roll Number: 206<br>USN: 01FE23BCI018</p>
+      </div>
+      <div class="team-card">
+        <h3>Ayush Kabbur</h3>
+        <p>Roll Number: 212<br>USN: 01FE23BCI033</p>
+      </div>
+      <div class="team-card">
+        <h3>Sinchana Hadagali</h3>
+        <p>Roll Number: 248<br>USN: 01FE23BCI117</p>
+      </div>
+      <div class="team-card">
+        <h3>Manjula Nayak</h3>
+        <p>Roll Number: 241<br>USN: 01FE23BCI097</p>
+      </div>
+      <div class="team-card">
+        <h3>Aman Yalligar</h3>
+        <p>Roll Number: 201<br>USN: 01FE23BCI001</p>
+      </div>
+    </div>
+
+    <!-- New Course Overview Section -->
+    <div class="content">
+      <h3>Course Overview:</h3>
+      <p>Algorithms simplify complex problems by breaking them into manageable steps, serving as the logical blueprint for programs. To stand out in today's competitive landscape, it is essential not only to understand algorithms but also to design efficient ones, optimizing both time and space complexity. This course aims to equip learners with the skills to write algorithms for specific tasks, implement them using appropriate data structures, and continually enhance their efficiency.</p>
+
+      <h3>Course Outcomes (COs):</h3>
+      <ol>
+        <li>Analyze the role of data structures in structuring and manipulating data for problem-solving and implement them using an array or list representation.</li>
+        <li>Discuss the properties, operations, applications, strengths, and weaknesses of the different data structures and their effect on algorithms.</li>
+        <li>Analyze, interpret, and compare various sorting, searching, and graph algorithms and perform efficiency analysis.</li>
+        <li>Evaluate the running time and space complexity of data structures and algorithms over different problem types and classes.</li>
+        <li>Examine different problem types and illustrate the limitations of algorithmic power.</li>
+        <li>Design solutions for real-world problems, optimize existing code using algorithms and data structures.</li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    Copyright &copy; G Division Team 7. Designed by <a href="#">Krish Sharma</a>.
+  </footer>
+
+</body>
+</html>
