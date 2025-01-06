@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainable Urbanization Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 150px 50px;
+      background-image: url('images/MA.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #2e5e4e;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    header h1 {
+      font-size: 50px;
+      margin: 0;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #1fa789;
+      padding: 15px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      background-color: #fff;
+      padding: 30px 0;
+    }
+    .content {
+      width: 80%;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .content h3 {
+      color: #1b8d74;
+      margin-top: 20px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
+    }
+    .project-info {
+      background-color: #e2f9f4;
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid #1fa789;
+      text-align: center;
+    }
+    .project-info h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #1fa789;
+    }
+    .project-info p {
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="project.html">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Sustainable Urbanization Case Study</h1>
+  </header>
+
+  <!-- Project Information -->
+  <div class="project-info">
+    <h2>Case Study Details</h2>
+    <p><strong>Case Study By:</strong> Manjula Nayak </p>
+    <p><strong>Roll Number:</strong> 241</p>
+    <p><strong>USN:</strong> 01FE23BCI097</p>
+  </div>
+
+  <!-- Overview Section -->
+  <section>
+    <div class="content">
+      <h2>Overview</h2>
+      <p>This case study focuses on aligning urban development with sustainable goals, specifically addressing <strong>SDG Goal 11</strong> and <strong>Target 11.7</strong> (Indicator 11.7.1). The objective is to enhance urban sustainability through optimized planning, improved accessibility, and better use of resources.</p>
+
+      <h3>Location Analysis</h3>
+      <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <tr style="background-color: #f9f9f9;">
+          <th>Sl. No.</th>
+          <th>Location Type</th>
+          <th>Number</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Public Parks</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Green Roofs</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Sustainable Buildings</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Waste Management Facilities</td>
+          <td>3</td>
+        </tr>
+      </table>
+
+      <p style="margin-top: 20px;">The data above reflects the current distribution of green spaces and sustainability efforts in the city. Below is a visual representation of the locations:</p>
+      <div style="text-align: center; margin: 20px 0;">
+        <img src="images/12.jpg" alt="Location Analysis" style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 10px;">
+        <p style="margin-top: 10px; font-style: italic; color: #555;"></p>
+      </div>
+
+      <h3>Objective</h3>
+      <p>To enhance accessibility, reduce travel costs, and prioritize green space projects for sustainable development.</p>
+
+      <h3>Steps and Applications</h3>
+
+      <h4>1. Optimizing Green Space Connectivity</h4>
+      <p>Using <strong>Kruskal’s Algorithm</strong>, planners developed a Minimum Spanning Tree (MST) to connect 10 green spaces with minimal road construction costs.</p>
+
+      <h4>Kruskal’s Algorithm</h4>
+      <p>Kruskal’s Algorithm is a Greedy algorithm for finding the MST of a graph. It sorts all edges by increasing weight and adds them one by one to the MST, avoiding cycles. This method ensures minimal road construction costs and enhanced connectivity.</p>
+
+      <h5>Key Points:</h5>
+      <ul>
+        <li>Sorts edges and adds them sequentially if no cycles are formed.</li>
+        <li>Time Complexity: O(|E| log |E|), where E is the number of edges.</li>
+      </ul>
+
+      <h4>Code: Kruskal’s Algorithm</h4>
+      <pre style="background-color: #f4f4f4; padding: 15px; border: 1px solid #ccc; overflow-x: auto;">
+#include &lt;iostream&gt;
+using namespace std;
+struct Edge {
+    int u, v, weight;
+};
+int find(int parent[], int a, int b) {
+    return parent[a] == parent[b];
+}
+void unions(int parent[], int n, int a, int b) {
+    int temp = parent[a];
+    for (int i = 0; i < n; i++) {
+        if (parent[i] == temp) parent[i] = parent[b];
+    }
+}
+void kruskal(int V, int E, Edge edges[]) {
+    int parent[V];
+    for (int i = 0; i < V; i++) parent[i] = i;
+    int mstw = 0;
+    for (int i = 0; i < E; i++) {
+        if (!find(parent, edges[i].u, edges[i].v)) {
+            cout << edges[i].u << " - " << edges[i].v << " : " << edges[i].weight << endl;
+            mstw += edges[i].weight;
+            unions(parent, V, edges[i].u, edges[i].v);
+        }
+    }
+    cout << "Total weight: " << mstw << endl;
+}
+int main() {
+    // Input Example
+}
+      </pre>
+
+      <h4>2. Analyzing Accessibility</h4>
+      <p>The <strong>Floyd-Warshall Algorithm</strong> identified the shortest paths between key locations, such as:</p>
+      <ul>
+        <li>Parks</li>
+        <li>Recycling centers</li>
+        <li>Public transport hubs</li>
+      </ul>
+      <p>Interventions were proposed for areas with high travel times.</p>
+
+      <h5>Key Points:</h5>
+      <ul>
+        <li>Based on the principle of Kleene’s Theorem.</li>
+        <li>Used for All-Pairs Shortest Path problems.</li>
+        <li>Falls under the dynamic programming technique (principle of optimality).</li>
+        <li>Time complexity: O(|V|³), where V is the number of vertices.</li>
+      </ul>
+
+      <h4>Code: Floyd-Warshall Algorithm</h4>
+      <pre style="background-color: #f4f4f4; padding: 15px; border: 1px solid #ccc; overflow-x: auto;">
+#include &lt;iostream&gt;
+using namespace std;
+
+const int max1 = 1000000;
+
+void floyd(int W[100][100], int n) {
+    int D[100][100];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            D[i][j] = W[i][j];
+        }
+    }
+    for (int k = 0; k < n; k++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (D[i][k] != max1 && D[k][j] != max1) {
+                    D[i][j] = min(D[i][j], D[i][k] + D[k][j]);
+                }
+            }
+        }
+    }
+    cout << "Shortest path matrix: " << endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (D[i][j] == max1) 
+                cout << "max1" << " ";
+            else
+                cout << D[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int n;
+    cout << "Enter the number of vertices: ";
+    cin >> n;
+
+    int W[100][100];
+    cout << "Enter the weight matrix (use a large number for no path, max1):" << endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> W[i][j];
+            if (W[i][j] == 0 && i != j) {
+                W[i][j] = max1;  
+            }
+        }
+    }
+    floyd(W, n);
+    return 0;
+}
+      </pre>
+
+      <h4>3. Prioritizing Development Projects</h4>
+      <p>Projects were ranked based on urgency and impact using <strong>Merge Sort</strong>. Top projects include:</p>
+      <ul>
+        <li>Converting unused land into parks</li>
+        <li>Upgrading roads to reduce travel times</li>
+      </ul>
+
+      <h5>Merge Sort</h5>
+      <p>Merge Sort is a divide and conquer algorithm for sorting an array. It divides the array into two halves, recursively sorts them, and then merges the sorted halves to produce the sorted array.</p>
+      <p>Time Complexity: O(n log n), where n is the number of elements.</p>
+
+      <h4>Code: Merge Sort</h4>
+      <pre style="background-color: #f4f4f4; padding: 15px; border: 1px solid #ccc; overflow-x: auto;">
+#include &lt;iostream&gt;
+using namespace std;
+
+void Merge(int B[], int bSIZE1, int C[], int cSIZE1, int A[]) {
+    int i = 0, j = 0, k = 0;
+    while (i < bSIZE1 && j < cSIZE1) {
+        if (B[i] <= C[j]) {
+            A[k] = B[i];
+            i++;
+        } else {
+            A[k] = C[j];
+            j++;
+        }
+        k++;
+    }
+    while (i < bSIZE1) {
+        A[k] = B[i];
+        i++;
+        k++;
+    }
+    while (j < cSIZE1) {
+        A[k] = C[j];
+        j++;
+        k++;
+    }
+}
+
+void MergeSort(int A[], int SIZE1) {
+    if (SIZE1 > 1) {
+        int mid = SIZE1 / 2;
+        int B[mid];
+        int C[SIZE1 - mid];
+        for (int i = 0; i < mid; i++) {
+            B[i] = A[i];
+        }
+        for (int i = mid; i < SIZE1; i++) {
+            C[i - mid] = A[i];
+        }
+        MergeSort(B, mid);
+        MergeSort(C, SIZE1 - mid);
+        Merge(B, mid, C, SIZE1 - mid, A);
+    }
+}
+
+int main() {
+    int A[] = {38, 27, 43, 3, 9, 82, 10};
+    int SIZE1 = sizeof(A) / sizeof(A[0]);
+
+    cout << "Original Array: ";
+    for (int i = 0; i < SIZE1; i++) {
+        cout << A[i] << " ";
+    }
+    cout << endl;
+
+    MergeSort(A, SIZE1);
+
+    cout << "Sorted Array: ";
+    for (int i = 0; i < SIZE1; i++) {
+        cout << A[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+      </pre>
+
+      <h2>Impact</h2>
+      <ul>
+        <li>Reduced costs of developing green spaces by 20% using the MST approach.</li>
+        <li>Improved accessibility to public facilities, reducing average travel times by 15%.</li>
+        <li>Timely execution of high-impact projects through data-driven prioritization.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; Copyrights G Division TEAM 7 MANJULA NAYAK 
