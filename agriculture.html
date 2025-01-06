@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainable Urbanization Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 150px 50px;
+      background-image: url('images/MA.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #2e5e4e;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    header h1 {
+      font-size: 50px;
+      margin: 0;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #1fa789;
+      padding: 15px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      background-color: #fff;
+      padding: 30px 0;
+    }
+    .content {
+      width: 80%;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .content h3 {
+      color: #1b8d74;
+      margin-top: 20px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
+    }
+    .project-info {
+      background-color: #e2f9f4;
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid #1fa789;
+      text-align: center;
+    }
+    .project-info h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #1fa789;
+    }
+    .project-info p {
+      font-size: 18px;
+      color: #555;
+    }
+    pre {
+      background-color: #f8f8f8;
+      padding: 10px;
+      border: 1px solid #ddd;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="project.html">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Sustainable Urbanization Case Study</h1>
+  </header>
+
+  <!-- Project Information -->
+  <div class="project-info">
+    <h2>Case Study Details</h2>
+    <p><strong>Case Study By:</strong> Manjula Nayak </p>
+    <p><strong>Roll Number:</strong> 241</p>
+    <p><strong>USN:</strong> 01FE23BCI097</p>
+  </div>
+
+  <!-- Problem Statement Section -->
+  <section>
+    <div class="content">
+      <h3>Problem Statement 2: Enhancing The Agricultural Facts</h3>
+
+      <h4>i) Crop Yield Optimization</h4>
+      <p><strong>Problem:</strong> Farmers need to identify the highest-yielding combinations to maximize overall production.</p>
+      <p><strong>Solution:</strong> Sort data by yield (descending) and analyze to identify top-performing combinations. This helps farmers make informed decisions on crop selection and timing.</p>
+      <pre>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+struct CropData {
+    string field;
+    string variety;
+    string season;
+    double yield;
+
+    CropData(string f, string v, string s, double y)
+        : field(f), variety(v), season(s), yield(y) {}
+};
+
+bool compareByYield(const CropData &a, const CropData &b) {
+    return a.yield > b.yield;
+}
+
+void displayTopCombinations(const vector&lt;CropData&gt; &data) {
+    cout &lt;&lt; "Top-performing combinations (sorted by yield):\n";
+    for (const auto &entry : data) {
+        cout &lt;&lt; "Field: " &lt;&lt; entry.field
+             &lt;&lt; ", Variety: " &lt;&lt; entry.variety
+             &lt;&lt; ", Season: " &lt;&lt; entry.season
+             &lt;&lt; ", Yield: " &lt;&lt; entry.yield &lt;&lt; endl;
+    }
+}
+
+int main() {
+    vector&lt;CropData&gt; cropData = {
+        CropData("Field1", "VarietyA", "Spring", 10.5),
+        CropData("Field2", "VarietyB", "Summer", 15.3),
+        CropData("Field1", "VarietyA", "Fall", 20.2),
+        CropData("Field3", "VarietyC", "Spring", 18.7),
+        CropData("Field2", "VarietyB", "Fall", 25.1),
+        CropData("Field3", "VarietyC", "Summer", 22.4),
+        CropData("Field1", "VarietyC", "Summer", 30.0)
+    };
+
+    sort(cropData.begin(), cropData.end(), compareByYield);
+    displayTopCombinations(cropData);
+
+    return 0;
+}
+      </pre>
+
+      <h4>ii) Irrigation Network Design</h4>
+      <p><strong>Problem:</strong> Designing efficient irrigation systems for optimal water distribution across fields.</p>
+      <p><strong>Solution:</strong> Use graph modeling and algorithms like Dijkstra’s to find the shortest paths for water flow, minimizing loss and maximizing coverage.</p>
+      <pre>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+#include &lt;climits&gt;
+
+using namespace std;
+
+struct Edge {
+    int to;
+    int weight;
+};
+
+vector&lt;int&gt; dijkstra(int n, const vector&lt;vector&lt;Edge&gt;&gt;& graph, int source) {
+    vector&lt;int&gt; dist(n, INT_MAX);
+    dist[source] = 0;
+
+    priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int, int&gt;&gt;&gt; pq;
+    pq.push({0, source});
+
+    while (!pq.empty()) {
+        int u = pq.top().second;
+        pq.pop();
+
+        for (const auto& edge : graph[u]) {
+            int v = edge.to;
+            int weight = edge.weight;
+
+            if (dist[u] + weight < dist[v]) {
+                dist[v] = dist[u] + weight;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    return dist;
+}
+
+int main() {
+    int n = 6;
+
+    vector&lt;vector&lt;Edge&gt;&gt; graph(n);
+
+    graph[0].push_back({1, 2});
+    graph[0].push_back({2, 4});
+    graph[1].push_back({3, 1});
+    graph[1].push_back({2, 3});
+    graph[2].push_back({4, 5});
+    graph[3].push_back({5, 3});
+    graph[4].push_back({5, 1});
+
+    vector&lt;int&gt; dist = dijkstra(n, graph, 0);
+
+    cout &lt;&lt; "Shortest distances from the water source (Node 0):\n";
+    for (int i = 0; i &lt; n; i++) {
+        if (dist[i] == INT_MAX) {
+            cout &lt;&lt; "Node " &lt;&lt; i &lt;&lt; ": No path\n";
+        } else {
+            cout &lt;&lt; "Node " &lt;&lt; i &lt;&lt; ": " &lt;&lt; dist[i] &lt;&lt; " units of distance\n";
+        }
+    }
+
+    return 0;
+}
+      </pre>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sustainable Urbanization Case Study</p>
+  </footer>
+
+</body>
+</html>
